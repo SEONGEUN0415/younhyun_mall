@@ -1,6 +1,7 @@
 @charset "UTF-8";
 @import url("reset.css");
 @import url("common.scss");
+@import url("common.css");
 /* font */
 @font-face {
   font-family: "Noto Sans KR";
