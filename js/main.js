@@ -4,6 +4,28 @@ $(function () {
         e.preventDefault();
     });
 
+    //header
+    //show depth02 menu when menu is mouseentered
+
+    let menu01 = $(".header .gnb .depth01");
+    let header = $(".header");
+
+    menu01.mouseenter(function () {
+       
+        if ($(this).find("ul").hasClass("depth02") === true) {
+            menu01.find('div').removeClass("on");
+            $(this).find('div').addClass("on");
+            header.addClass("on");
+        } else {
+            header.removeClass("on");
+        }
+    });
+    menu01.mouseleave(function () {
+        $(this).find('div').removeClass("on");
+        header.removeClass("on");
+    });
+
+    
     //mainvisual
     //change imgs each slides in mobile
     let mainVisualPcImg = $(".main__visual .swiper-slide");
@@ -47,12 +69,8 @@ $(function () {
 
     //cont04
     //tap menu
-    let tapMenu = document.querySelectorAll(
-        ".cont04 .category__btn li button"
-    );
-    let cont04List = document.querySelectorAll(
-        ".cont04 .category__list"
-    );
+    let tapMenu = document.querySelectorAll(".cont04 .category__btn li button");
+    let cont04List = document.querySelectorAll(".cont04 .category__list");
     for (let i = 0; i < tapMenu.length; i++) {
         tapMenu[i].addEventListener("click", () => {
             cont04List.forEach((item) => {
@@ -67,25 +85,26 @@ $(function () {
     }
 
     //footer
-    //toggle down for the time information 
-    let centerToggle = $('.footer__info__center > a');
-    let showroomToggle = $('.footer__info__showroom > a');
+    //toggle down for the time information
+    let centerToggle = $(".footer__info__center > a");
+    let showroomToggle = $(".footer__info__showroom > a");
 
-
-    centerToggle.click(function(){
-       centerToggle.nextAll().toggleClass('on');
-    })
-    showroomToggle.click(function(){
-       showroomToggle.nextAll().toggleClass('on');
-    })
-
+    centerToggle.click(function () {
+        centerToggle.nextAll().toggleClass("on");
+    });
+    showroomToggle.click(function () {
+        showroomToggle.nextAll().toggleClass("on");
+    });
 
     //top-btn
     //scroll to top when it's clicked
-    let topBtn = $('.top-btn');
-    topBtn.click(function(){
-        $('html, body').animate({
-            scrollTop: 0
-        }, 800)
-    })
+    let topBtn = $(".top-btn");
+    topBtn.click(function () {
+        $("html, body").animate(
+            {
+                scrollTop: 0,
+            },
+            800
+        );
+    });
 }); //script end
