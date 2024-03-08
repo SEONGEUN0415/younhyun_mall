@@ -168,12 +168,13 @@ body {
   padding: 0 3rem;
 }
 .header .nav__pc .gnb .depth01 div.on {
-  opacity: 1;
+  display: flex;
+  z-index: 999999;
 }
 .header .nav__pc .gnb .depth01 div {
   display: flex;
+  display: none;
   justify-content: space-between;
-  opacity: 0;
   position: absolute;
   top: 100px;
   left: 0;
@@ -184,12 +185,37 @@ body {
 }
 .header .nav__pc .gnb .depth01 div .depth02 {
   width: 100%;
-  display: none;
+  height: 500px;
+  /*   display: none; */
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+.header .nav__pc .gnb .depth01 div .depth02:after {
+  content: "";
+  width: 1px;
+  height: 100%;
+  background-color: #191919;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 .header .nav__pc .gnb .depth01 div .depth02 li {
   width: 100%;
+  height: 40px;
+  line-height: 40px;
+}
+.header .nav__pc .gnb .depth01 div .depth02 li:first-child {
+  height: auto;
+}
+.header .nav__pc .gnb .depth01 div .depth02 li strong {
+  display: block;
+  height: 80px;
+  line-height: 80px;
+}
+.header .nav__pc .gnb .depth01 div .depth02 li strong a {
+  display: block;
+  height: 100%;
 }
 .header .util {
   display: flex;
@@ -207,9 +233,26 @@ body {
 .main__visual {
   margin-top: 143px;
 }
-.main__visual .swiper-pagination {
-  top: auto;
+.main__visual .swiper {
+  position: relative;
+}
+.main__visual .progressBar {
+  position: absolute;
   bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-dark-grey);
+  z-index: 7777;
+}
+.main__visual .progressBar::after {
+  content: "";
+  width: 100%;
+  height: 8px;
+  background-color: var(--color-red);
+  display: inline-block;
+  transform: translateY(-100%);
+  animation: progressBar 4.1s infinite linear;
 }
 .main__visual .swiper-slide {
   height: 42.23%;
@@ -237,6 +280,14 @@ body {
      object-fit: cover;
 }
 
+@keyframes progressBar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
 /* main__visual end */
 section {
   font-size: 16px;
@@ -425,7 +476,7 @@ section {
      object-fit: cover;
 }
 .cont03 .list__item div {
-  margin-top: 20px;
+  margin-top: 2rem;
 }
 .cont03 .list__item div h3 {
   font-weight: bold;
@@ -579,18 +630,7 @@ section {
 .cont05 .swiper-slide {
   position: relative;
 }
-.cont05 .swiper-slide figure {
-  height: 48.1vw;
-  max-height: 760px;
-  position: relative;
-}
-.cont05 .swiper-slide figure img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.cont05 .swiper-slide figure::before {
+.cont05 .swiper-slide a::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -599,9 +639,20 @@ section {
   left: 0;
   background-color: #191919;
   opacity: 0;
+  transition: all 0.5s;
 }
-.cont05 .swiper-slide figure:hover::before {
+.cont05 .swiper-slide a:hover::before {
   opacity: 0.7;
+}
+.cont05 .swiper-slide figure {
+  height: 48.1vw;
+  max-height: 760px;
+}
+.cont05 .swiper-slide figure img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .cont05 .swiper-slide div {
   position: absolute;
@@ -725,7 +776,7 @@ section {
   height: 52px;
   position: fixed;
   bottom: 5rem;
-  right: 20px;
+  right: 5rem;
   z-index: 9999;
 }
 .top-btn button {
@@ -733,7 +784,7 @@ section {
   height: 100%;
   background-color: var(--color-grey);
   color: white;
-  font-size: 2rem;
+  font-size: 18px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -794,6 +845,12 @@ section {
   }
   .header .inner {
     background-color: rgba(255, 255, 255, 0);
+  }
+  .header.active {
+    background-color: var(--color-white);
+  }
+  .header.active .inner {
+    background-color: var(--color-white);
   }
   .main__visual {
     margin-top: 0;
@@ -865,6 +922,12 @@ section {
   }
   .cont05 {
     margin-top: 32rem;
+  }
+  .cont05 .swiper-slide a::before {
+    display: none;
+  }
+  .cont05 .swiper-slide a:hover::before {
+    opacity: 0.7;
   }
   .cont05 .swiper-slide div {
     position: static;
@@ -968,7 +1031,7 @@ section {
     width: 40px;
     height: 40px;
   }
-}
+} /* 636 */
 @media screen and (max-width: 480px) {
   html,
   body {
@@ -1041,6 +1104,9 @@ section {
   }
 } /* 480 */
 @media screen and (max-width: 380px) {
+  .header .discount__banner {
+    font-size: 13px;
+  }
   .cont04 .category__btn li {
     width: 100%;
   }

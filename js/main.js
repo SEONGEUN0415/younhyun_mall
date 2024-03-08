@@ -11,21 +11,34 @@ $(function () {
     let header = $(".header");
 
     menu01.mouseenter(function () {
-       
         if ($(this).find("ul").hasClass("depth02") === true) {
-            menu01.find('div').removeClass("on");
-            $(this).find('div').addClass("on");
+            menu01.find("div").removeClass("on");
+            $(this).find("div").addClass("on");
             header.addClass("on");
         } else {
             header.removeClass("on");
         }
     });
     menu01.mouseleave(function () {
-        $(this).find('div').removeClass("on");
+        $(this).find("div").removeClass("on");
         header.removeClass("on");
     });
 
-    
+    //header-mobile
+    //change the background of header when it's scrolling
+    let mainVisual = $(".main__visual figure");
+    let mainVisualTop = mainVisual.height();
+
+    console.log(mainVisualTop);
+    $(window).scroll(function () {
+        let scrollBar = $(window).scrollTop();
+        if (scrollBar > mainVisualTop) {
+            header.addClass("active");
+        } else {
+            header.removeClass("active");
+        }
+    });
+
     //mainvisual
     //change imgs each slides in mobile
     let mainVisualPcImg = $(".main__visual .swiper-slide");
