@@ -1136,4 +1136,25 @@ section {
   .cont04 .category__btn li {
     width: 100%;
   }
+  .cont04 .category__list-bigBox div {
+    padding: 4rem;
+  }
+  .cont04 .category__list-bigBox div h3 {
+    font-size: 16px;
+  }
+  .cont04 .category__list-bigBox div h3 span {
+    font-size: 11px;
+  }
+  .cont04 .category__list-bigBox div p {
+    font-size: 11px;
+  }
+  .cont04 .category__list-smallBox .item div {
+    padding: 2rem;
+  }
+  .cont04 .category__list-smallBox .item div h3 {
+    font-size: 13px;
+  }
+  .cont04 .category__list-smallBox .item div p {
+    font-size: 10px;
+  }
 }/*# sourceMappingURL=style.css.map */
