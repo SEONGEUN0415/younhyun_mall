@@ -78,6 +78,7 @@ button {
   border: 0;
   cursor: pointer;
   font-family: "Noto Sans KR";
+  color: var(--color-black);
 }
 
 html,
@@ -1037,7 +1038,7 @@ section {
 } /* 636 */
 @media screen and (max-width: 550px) {
   .cont05 {
-    margin-top: 2.8rem;
+    margin-top: 28rem;
   }
 }
 @media screen and (max-width: 480px) {
