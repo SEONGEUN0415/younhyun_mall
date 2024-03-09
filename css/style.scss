@@ -172,7 +172,18 @@ body {
             position: relative;
             .depth01 {
                 text-align: center;
-                
+                &::after {
+                    content: "";
+                    width: 0;
+                    height: 2px;
+                    background-color: var(--color-red);
+                    display: inline-block;
+                    transform: translateY(-4500%);
+                    transition: all 0.5s;
+                }
+                &.active::after {
+                    width: 50%;
+                }
 
                 > a {
                     display: block;
@@ -262,7 +273,7 @@ body {
         background-color: var(--color-dark-grey);
         z-index: 7777;
         position: relative;
-        
+
         &::after {
             content: "";
             width: 100%;
@@ -300,14 +311,13 @@ body {
         object-fit: cover;
     }
 }
-@keyframes progressBar{
-    0%{
+@keyframes progressBar {
+    0% {
         width: 0;
     }
-    100%{
+    100% {
         width: 100%;
     }
-        
 }
 /* main__visual end */
 
@@ -1127,7 +1137,7 @@ section {
 } /* 636 */
 
 @media screen and (max-width: 550px) {
-    .cont05{
+    .cont05 {
         margin-top: 28rem;
     }
 }
@@ -1217,7 +1227,7 @@ section {
             }
         }
     }
-    .cont05{
+    .cont05 {
         margin-top: 26rem;
     }
 } /* 480 */
