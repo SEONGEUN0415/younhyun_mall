@@ -858,8 +858,10 @@ section {
   }
   .header {
     background-color: rgba(255, 255, 255, 0.3);
+    height: 123px;
   }
   .header .inner {
+    height: 80px;
     background-color: rgba(255, 255, 255, 0);
   }
   .header.active {
@@ -985,6 +987,12 @@ section {
   .title p {
     font-size: 11px;
   }
+  .header {
+    height: 100px;
+  }
+  .header .inner {
+    height: 57px;
+  }
   .main__visual .swiper-button-prev {
     left: 20px;
   }
@@ -1057,12 +1065,6 @@ section {
   html,
   body {
     font-size: 31.25%;
-  }
-  .header {
-    height: 123px;
-  }
-  .header .inner {
-    height: 80px;
   }
   .cont01 .item {
     width: 100%;
