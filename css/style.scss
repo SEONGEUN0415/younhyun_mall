@@ -86,6 +86,7 @@ button {
     border: 0;
     cursor: pointer;
     font-family: "Noto Sans KR";
+    color: var(--color-black);
 }
 html,
 body {
@@ -256,17 +257,20 @@ body {
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 8px;
+        height: 10px;
         background-color: var(--color-dark-grey);
         z-index: 7777;
+        position: relative;
         
         &::after {
             content: "";
             width: 100%;
-            height: 8px;
+            height: 10px;
             background-color: var(--color-red);
-            display: inline-block;
-            transform: translateY(-100%);
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
             animation: progressBar 4.1s infinite linear;
         }
     }
@@ -1121,6 +1125,12 @@ section {
     }
 } /* 636 */
 
+@media screen and(max-width: 550px) {
+    .cont05{
+        margin-top: 28rem;
+    }
+}
+
 @media screen and (max-width: 480px) {
     html,
     body {
@@ -1205,6 +1215,9 @@ section {
                 }
             }
         }
+    }
+    .cont05{
+        margin-top: 26rem;
     }
 } /* 480 */
 

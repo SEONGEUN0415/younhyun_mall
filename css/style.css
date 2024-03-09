@@ -241,17 +241,20 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 8px;
+  height: 10px;
   background-color: var(--color-dark-grey);
   z-index: 7777;
+  position: relative;
 }
 .main__visual .progressBar::after {
   content: "";
   width: 100%;
-  height: 8px;
+  height: 10px;
   background-color: var(--color-red);
-  display: inline-block;
-  transform: translateY(-100%);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
   animation: progressBar 4.1s infinite linear;
 }
 .main__visual .swiper-slide {
@@ -1032,6 +1035,11 @@ section {
     height: 40px;
   }
 } /* 636 */
+@media screen and (max-width: 550px) {
+  .cont05 {
+    margin-top: 2.8rem;
+  }
+}
 @media screen and (max-width: 480px) {
   html,
   body {
@@ -1101,6 +1109,9 @@ section {
   }
   .cont04 .category__list-smallBox .item {
     width: 48%;
+  }
+  .cont05 {
+    margin-top: 26rem;
   }
 } /* 480 */
 @media screen and (max-width: 380px) {
