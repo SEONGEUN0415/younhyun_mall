@@ -955,6 +955,14 @@ section {
     body {
         font-size: 37.5%;
     }
+    .main__visual {
+        .progressBar {
+            height: 5px;
+            &::after {
+                height: 5px;
+            }
+        }
+    }
 
     .cont01 {
         .title {
@@ -1253,7 +1261,7 @@ section {
                         padding: 4rem;
                         h3 {
                             font-size: 16px;
-                            span{
+                            span {
                                 font-size: 11px;
                             }
                         }
@@ -1266,11 +1274,10 @@ section {
                     .item {
                         div {
                             padding: 2rem;
-                            h3{
+                            h3 {
                                 font-size: 13px;
-                                
                             }
-                            p{
+                            p {
                                 font-size: 10px;
                             }
                         }

@@ -905,6 +905,12 @@ section {
   body {
     font-size: 37.5%;
   }
+  .main__visual .progressBar {
+    height: 5px;
+  }
+  .main__visual .progressBar::after {
+    height: 5px;
+  }
   .cont01 .title {
     margin-bottom: 50px;
   }
