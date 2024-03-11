@@ -18,11 +18,17 @@ $(function () {
         } else {
             header.removeClass("on");
         }
+        //underline of menu when it's hover
+        $(this).addClass('active');
     });
     menu01.mouseleave(function () {
         $(this).find("div").removeClass("on");
         header.removeClass("on");
+        menu01.removeClass('active');
     });
+
+    
+    
 
     //header-mobile
     //change the background of header when it's scrolling

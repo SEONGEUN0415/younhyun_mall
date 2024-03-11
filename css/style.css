@@ -78,6 +78,7 @@ button {
   border: 0;
   cursor: pointer;
   font-family: "Noto Sans KR";
+  color: var(--color-black);
 }
 
 html,
@@ -163,6 +164,18 @@ body {
 .header .nav__pc .gnb .depth01 {
   text-align: center;
 }
+.header .nav__pc .gnb .depth01::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: var(--color-red);
+  display: inline-block;
+  transform: translateY(-4500%);
+  transition: all 0.5s;
+}
+.header .nav__pc .gnb .depth01.active::after {
+  width: 50%;
+}
 .header .nav__pc .gnb .depth01 > a {
   display: block;
   padding: 0 3rem;
@@ -241,17 +254,20 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 8px;
+  height: 10px;
   background-color: var(--color-dark-grey);
   z-index: 7777;
+  position: relative;
 }
 .main__visual .progressBar::after {
   content: "";
   width: 100%;
-  height: 8px;
+  height: 10px;
   background-color: var(--color-red);
-  display: inline-block;
-  transform: translateY(-100%);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
   animation: progressBar 4.1s infinite linear;
 }
 .main__visual .swiper-slide {
@@ -842,8 +858,10 @@ section {
   }
   .header {
     background-color: rgba(255, 255, 255, 0.3);
+    height: 123px;
   }
   .header .inner {
+    height: 80px;
     background-color: rgba(255, 255, 255, 0);
   }
   .header.active {
@@ -886,6 +904,12 @@ section {
   html,
   body {
     font-size: 37.5%;
+  }
+  .main__visual .progressBar {
+    height: 5px;
+  }
+  .main__visual .progressBar::after {
+    height: 5px;
   }
   .cont01 .title {
     margin-bottom: 50px;
@@ -969,6 +993,12 @@ section {
   .title p {
     font-size: 11px;
   }
+  .header {
+    height: 100px;
+  }
+  .header .inner {
+    height: 57px;
+  }
   .main__visual .swiper-button-prev {
     left: 20px;
   }
@@ -1032,16 +1062,15 @@ section {
     height: 40px;
   }
 } /* 636 */
+@media screen and (max-width: 550px) {
+  .cont05 {
+    margin-top: 28rem;
+  }
+}
 @media screen and (max-width: 480px) {
   html,
   body {
     font-size: 31.25%;
-  }
-  .header {
-    height: 123px;
-  }
-  .header .inner {
-    height: 80px;
   }
   .cont01 .item {
     width: 100%;
@@ -1102,6 +1131,9 @@ section {
   .cont04 .category__list-smallBox .item {
     width: 48%;
   }
+  .cont05 {
+    margin-top: 26rem;
+  }
 } /* 480 */
 @media screen and (max-width: 380px) {
   .header .discount__banner {
@@ -1109,5 +1141,26 @@ section {
   }
   .cont04 .category__btn li {
     width: 100%;
+  }
+  .cont04 .category__list-bigBox div {
+    padding: 4rem;
+  }
+  .cont04 .category__list-bigBox div h3 {
+    font-size: 16px;
+  }
+  .cont04 .category__list-bigBox div h3 span {
+    font-size: 11px;
+  }
+  .cont04 .category__list-bigBox div p {
+    font-size: 11px;
+  }
+  .cont04 .category__list-smallBox .item div {
+    padding: 2rem;
+  }
+  .cont04 .category__list-smallBox .item div h3 {
+    font-size: 13px;
+  }
+  .cont04 .category__list-smallBox .item div p {
+    font-size: 10px;
   }
 }/*# sourceMappingURL=style.css.map */
