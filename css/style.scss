@@ -162,7 +162,9 @@ body {
     h1 img {
         width: 264px;
     }
-
+    .nav__mobile{
+        display: none;
+    }
     .nav__pc {
         height: 100%;
         line-height: 100px;
