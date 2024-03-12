@@ -69,7 +69,7 @@ $(function () {
     });
 
     //cont02
-    //scrolling x
+    //scrolling X축으로
     let cont02 = document.querySelector(".cont02");
     let cont02List = cont02.querySelector(".list");
     let cont02ListBox = cont02List.querySelector(".list__box");
@@ -85,6 +85,19 @@ $(function () {
         var scr = cont02List.scrollTop;
         cont02ListBox.style.left = -scr + "px";
     });
+    
+    //mobile일때 
+    if ($(window).width() < 1025) {  
+        cont02List.style.width = 'auto';
+        cont02ListBox.style.height = 'auto';
+        function removeDefaultEvent(event) {
+            event.preventDefault();
+        }
+        cont02ListBox.addEventListener("wheel", removeDefaultEvent, { 
+            passive: false
+        });
+
+    }  
 
     //cont04
     //tap menu

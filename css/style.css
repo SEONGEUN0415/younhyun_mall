@@ -115,6 +115,7 @@ body {
   z-index: 999999;
   width: 100%;
   background-color: #fff;
+  /* .menu-mobile__open */
 }
 .header.on::after {
   content: "";
@@ -228,6 +229,14 @@ body {
 }
 .header .nav__pc .gnb .depth01 div .depth02 li strong a {
   display: block;
+  height: 100%;
+}
+.header .menu-mobile__open {
+  width: 30px;
+  height: 30px;
+}
+.header .menu-mobile__open img {
+  width: 100%;
   height: 100%;
 }
 .header .util {
@@ -459,7 +468,7 @@ section {
   line-height: 1.2;
 }
 .cont02 .list__box .item div button {
-  margin-left: calc(100% - 50px);
+  margin-left: 0;
   color: #fff;
   border: 1px solid #fff;
   width: 80px;
@@ -848,10 +857,34 @@ section {
   .mobile img {
     width: 21px;
   }
+  .cont02 .list {
+    flex-wrap: wrap;
+    overflow-x: scroll;
+    height: auto;
+  }
+  .cont02 .list__title {
+    width: 100%;
+    position: relative;
+    flex-direction: row;
+    max-width: 100%;
+  }
+  .cont02 .list__box {
+    margin-top: 30px;
+  }
+  .cont02 .list__box .item {
+    height: 450px;
+    width: 650px;
+  }
+  .cont02 .list__box .item div {
+    position: absolute;
+  }
+  .cont02 .list::-webkit-scrollbar {
+    display: block;
+  }
   .cont05 .swiper-slide figure {
     height: 64vw;
   }
-}
+} /* 1024 */
 @media screen and (max-width: 900px) {
   html,
   body {
@@ -892,10 +925,6 @@ section {
   }
   .cont02 .list {
     justify-content: start;
-    height: 356px;
-  }
-  .cont02 .list__item {
-    height: 356px;
   }
 }
 @media screen and (max-width: 767px) {
@@ -920,9 +949,6 @@ section {
   }
   .cont01 .item ul {
     top: 18px;
-  }
-  .cont02 .list__title {
-    width: 8%;
   }
   .cont04 .category__list {
     flex-direction: column;
@@ -1086,12 +1112,6 @@ section {
     font-size: 14px;
   }
   /* cont01 */
-  .cont02 .list {
-    height: 300px;
-  }
-  .cont02 .list__title {
-    width: 6%;
-  }
   .cont02 .list__title h3 {
     font-size: 18px;
   }
@@ -1110,9 +1130,9 @@ section {
   }
   .cont02 .list__box {
     width: 1675px;
-  }
-  .cont02 .list__box .item {
-    height: 300px;
+    /*  .item {
+         height: 300px;
+     } */
   }
   .cont03 .list {
     flex-wrap: wrap;
