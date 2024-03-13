@@ -113,6 +113,7 @@ body {
   font-weight: bold;
   background-color: var(--color-banner-discount);
   text-align: center;
+  cursor: pointer;
 }
 .discount__banner p {
   font-size: 15px;
@@ -253,16 +254,19 @@ body {
 .header .nav__mobile {
   background-color: var(--color-white);
   width: 80%;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: -100%;
   padding: 50px;
+  overflow: scroll;
   /* .login end */
 }
 .header .nav__mobile .menu__close-btn {
   position: absolute;
   top: 50px;
-  right: 50px;
+  right: 5rem;
+  cursor: pointer;
 }
 .header .nav__mobile .menu__close-btn i {
   font-size: 20px;
@@ -272,7 +276,7 @@ body {
   font-weight: bold;
 }
 .header .nav__mobile .login ul {
-  margin: 20px 0;
+  margin: 20px 0 30px;
 }
 .header .nav__mobile .login ul li {
   display: inline-block;
@@ -311,11 +315,15 @@ body {
 }
 .header .nav__mobile .gnb {
   margin-top: 30px;
+  height: 100%;
 }
 .header .nav__mobile .gnb .depth01 {
   padding: 10px 0;
   margin-bottom: 10px;
   font-size: 20px;
+}
+.header .nav__mobile .gnb .depth01:nth-child(1) > a::after, .header .nav__mobile .gnb .depth01:nth-child(2) > a::after, .header .nav__mobile .gnb .depth01:nth-child(3) > a::after {
+  display: block;
 }
 .header .nav__mobile .gnb .depth01 > a {
   position: relative;
@@ -331,9 +339,22 @@ body {
   height: 12px;
   background: url(../img/next-icon.png) center/100% no-repeat;
   transform: rotate(90deg);
-}
-.header .nav__mobile .gnb .depth01 .depth02 {
   display: none;
+}
+.header .nav__mobile .gnb .depth01 div {
+  margin: 10px 0;
+}
+.header .nav__mobile .gnb .depth01 div .depth02 {
+  padding: 10px 0;
+  display: none;
+  height: 100%;
+}
+.header .nav__mobile .gnb .depth01 div .depth02 li {
+  font-size: 18px;
+  padding: 10px 0;
+}
+.header .nav__mobile .gnb .depth01 div .depth02 li a {
+  display: block;
 }
 .header .util {
   display: flex;

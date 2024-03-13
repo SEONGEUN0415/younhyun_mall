@@ -118,6 +118,7 @@ body {
     font-weight: bold;
     background-color: var(--color-banner-discount);
     text-align: center;
+    cursor: pointer;
     p {
         font-size: 15px;
         span {
@@ -263,15 +264,18 @@ body {
     .nav__mobile {
         background-color: var(--color-white);
         width: 80%;
+        height: 100vh;
         position: fixed;
         top: 0;
         left: -100%;
         padding: 50px;
-        
+        overflow: scroll;
+
         .menu__close-btn {
             position: absolute;
             top: 50px;
-            right: 50px;
+            right: 5rem;
+            cursor: pointer;
             i {
                 font-size: 20px;
             }
@@ -282,7 +286,7 @@ body {
                 font-weight: bold;
             }
             ul {
-                margin: 20px 0;
+                margin: 20px 0 30px;
                 li {
                     display: inline-block;
                     margin-right: 20px;
@@ -321,35 +325,55 @@ body {
                 width: 100%;
                 border: 1px solid var(--color-grey);
                 border-radius: 5px;
-                
             }
         }
         .gnb {
             margin-top: 30px;
+            height: 100%;
             .depth01 {
                 padding: 10px 0;
                 margin-bottom: 10px;
                 font-size: 20px;
-                >a{
+                &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+                    > a {
+                        &::after {
+                            display: block;
+                        }
+                    }
+                }
+                > a {
                     position: relative;
                     display: block;
                     font-weight: bold;
-                    &::after{
-                        content: '';
+
+                    &::after {
+                        content: "";
                         position: absolute;
                         top: 0;
                         right: 0;
                         width: 12px;
                         height: 12px;
-                        background: url(../img/next-icon.png) center / 100% no-repeat;
+                        background: url(../img/next-icon.png) center / 100%
+                            no-repeat;
                         transform: rotate(90deg);
+                        display: none;
                     }
                 }
-                .depth02{
-                    display: none;
-                    
+                div {
+                    margin: 10px 0;
+                    .depth02 {
+                        padding: 10px 0;
+                        display: none;
+                        height: 100%;
+                        li {
+                            font-size: 18px;
+                            padding: 10px 0;
+                            a {
+                                display: block;
+                            }
+                        }
+                    }
                 }
-                
             }
         }
     }

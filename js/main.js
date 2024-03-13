@@ -44,41 +44,51 @@ $(function () {
     });
 
     //nav__mobile
-    let navMobile = $('.header .nav__mobile');
-    let openMenuBtn = $('.header .menu__open-btn');
-    let closeMenuBtn = $('.header .menu__close-btn');
+    let navMobile = $(".header .nav__mobile");
+    let openMenuBtn = $(".header .menu__open-btn");
+    let closeMenuBtn = $(".header .menu__close-btn");
     //appear the menu when menuBtn is clicked
-    openMenuBtn.click(function(){
+    openMenuBtn.click(function () {
         navMobile.animate(
             {
                 left: "0px",
-              }, 1000, 
-              "easeOutCubic"
+            },
+            1000,
+            "easeOutCubic"
         );
-    })
+    });
     //remove menu when the cancel icon is clicked
-    closeMenuBtn.click(function(){
+    closeMenuBtn.click(function () {
         navMobile.animate(
-        {
-        left: '-100%'
-        }, 'easeOutCubic');
-    })
+            {
+                left: "-100%",
+            },
+            "easeOutCubic"
+        );
+    });
 
     //show depth02 when depth01 is clicked
-    let depth01Mobile = $('.header .nav__mobile .depth01 > a');
-    depth01Mobile.click(function(){
-        $(this).find('.depth02').slideDown();
-    })
+    let depth01Mobile = $(".header .nav__mobile .depth01 >a");
+    depth01Mobile.click(function () {
+        if ($(depth01Mobile).next().find(".depth02").css("display") === "none") {
+            $(depth01Mobile).next().find(".depth02").slideUp();
+            $(this).next().find(".depth02").slideDown()
+        }else{
+            $(depth01Mobile).next().find(".depth02").slideUp();
+            //$(this).find(".depth02").slideUp().animate(500, "swing");
+            $(this).next().find(".depth02").slideUp();
+        }
+    });
+    //show depth03 when depth02 is clicked
+    let depth03Mobile = $('.header .nav__mobile .depth01 .depth02 li')
 
     // remove event banner when scrolling
     $(window).scroll(function () {
         let scrollBar = $(window).scrollTop();
         if (scrollBar > 0) {
-            
             header.css("top", "0");
-        } else{
-            
-            header.css('top', '43px');
+        } else {
+            header.css("top", "43px");
         }
     });
 
@@ -188,5 +198,4 @@ $(function () {
         );
     });
     //🎈top-btn end
-
 }); //script end
