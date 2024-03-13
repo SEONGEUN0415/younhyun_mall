@@ -24,14 +24,14 @@
     </head>
     <body>
         <div id="wrap">
+            <div class="discount__banner">
+                <p>
+                    지금 <span>회원가입</span>하고
+                    <span>할인혜택</span> 받아가세요!
+                </p>
+            </div>
+            <!-- .discount__banner -->
             <header class="header" id="header">
-                <div class="discount__banner">
-                    <p>
-                        지금 <span>회원가입</span>하고
-                        <span>할인혜택</span> 받아가세요!
-                    </p>
-                </div>
-                <!-- .discount__banner -->
                 <div class="inner">
                     <h1><img class="pc" src="img/logo.jpg" alt="logo" /></h1>
                     <nav class="nav__pc pc">
@@ -166,10 +166,29 @@
                         </ul>
                         <!-- .gnb end -->
                     </nav>
-                    <button class="menu-mobile__open">
-                       <img src="img/menu.png" alt="menu-icon" /> 
+                    <button class="menu-mobile__open mobile">
+                        <img src="img/menu.png" alt="menu-icon" />
                     </button>
                     <nav class="nav__mobile mobile">
+                        <div class="menu__close-btn">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                        <!-- .menu__close-btn end -->
+                        <div class="login">
+                            <h5>로그인이 필요합니다.</h5>
+                            <ul>
+                                <li><a href="#">로그인</a></li>
+                                <li><a href="#">회원가입</a></li>
+                            </ul>
+                        </div>
+                        <!-- .login end -->
+                        <div class="search-box">
+                            <input
+                                type="text"
+                                placeholder="검색어를 입력해주세요"
+                            />
+                        </div>
+                        <!-- .search-box end -->
                         <ul class="gnb">
                             <li class="depth01">
                                 <a href="#">타일</a>

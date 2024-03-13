@@ -4,6 +4,8 @@ $(function () {
         e.preventDefault();
     });
 
+    //🎈 link prevent end
+
     //header
     //show depth02 menu when menu is mouseentered
 
@@ -19,23 +21,19 @@ $(function () {
             header.removeClass("on");
         }
         //underline of menu when it's hover
-        $(this).addClass('active');
+        $(this).addClass("active");
     });
     menu01.mouseleave(function () {
         $(this).find("div").removeClass("on");
         header.removeClass("on");
-        menu01.removeClass('active');
+        menu01.removeClass("active");
     });
-
-    
-    
 
     //header-mobile
     //change the background of header when it's scrolling
     let mainVisual = $(".main__visual figure");
     let mainVisualTop = mainVisual.height();
 
-    console.log(mainVisualTop);
     $(window).scroll(function () {
         let scrollBar = $(window).scrollTop();
         if (scrollBar > mainVisualTop) {
@@ -44,6 +42,20 @@ $(function () {
             header.removeClass("active");
         }
     });
+
+    // remove event banner when scrolling
+    $(window).scroll(function () {
+        let scrollBar = $(window).scrollTop();
+        if (scrollBar > 0) {
+            
+            header.css("top", "0");
+        } else{
+            
+            header.css('top', '43px');
+        }
+    });
+
+    //🎈header end
 
     //mainvisual
     //change imgs each slides in mobile
@@ -58,6 +70,8 @@ $(function () {
         });
     }
 
+    //🎈mainvisual end
+
     //cont01
     //change the contents when category is clicked
     let cont01Menu = $(".cont01 .item ul li");
@@ -67,6 +81,8 @@ $(function () {
         cont01Contents.removeClass("on");
         cont01Contents.eq($(this).index()).addClass("on");
     });
+
+    //🎈cont01 end
 
     //cont02
     //scrolling X축으로
@@ -85,19 +101,20 @@ $(function () {
         var scr = cont02List.scrollTop;
         cont02ListBox.style.left = -scr + "px";
     });
-    
-    //mobile일때 
-    if ($(window).width() < 1025) {  
-        cont02List.style.width = 'auto';
-        cont02ListBox.style.height = 'auto';
+
+    //mobile일때
+    if ($(window).width() < 1025) {
+        cont02List.style.width = "auto";
+        cont02ListBox.style.height = "auto";
         function removeDefaultEvent(event) {
             event.preventDefault();
         }
-        cont02ListBox.addEventListener("wheel", removeDefaultEvent, { 
-            passive: false
+        cont02ListBox.addEventListener("wheel", removeDefaultEvent, {
+            passive: false,
         });
+    }
 
-    }  
+    //🎈cont02 end
 
     //cont04
     //tap menu
@@ -116,6 +133,8 @@ $(function () {
         });
     }
 
+    //🎈cont04 end
+
     //footer
     //toggle down for the time information
     let centerToggle = $(".footer__info__center > a");
@@ -128,6 +147,8 @@ $(function () {
         showroomToggle.nextAll().toggleClass("on");
     });
 
+    //🎈 footer end
+
     //top-btn
     //scroll to top when it's clicked
     let topBtn = $(".top-btn");
@@ -139,4 +160,6 @@ $(function () {
             800
         );
     });
+    //🎈top-btn end
+
 }); //script end
