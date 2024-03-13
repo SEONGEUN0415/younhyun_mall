@@ -72,9 +72,9 @@ $(function () {
     depth01Mobile.click(function () {
         if ($(this).next().find(".depth02").css("display") === "none") {
             $(depth01Mobile).next().find(".depth02").slideUp();
-            $(this).next().find(".depth02").slideDown()
+            $(this).next().find(".depth02").slideDown(500, 'easeInOutCubic')
         }else{
-            $(this).next().find(".depth02").slideUp();
+            $(this).next().find(".depth02").slideUp(500, 'easeInOutCubic');
         }
     });
     //show depth03 when depth02 is clicked
@@ -104,6 +104,12 @@ $(function () {
                 .attr("src", "img/mainvisual0" + i + "-mobile.png");
         });
     }
+    //progress bar
+   
+    
+    
+   
+   
 
     //🎈mainvisual end
 
