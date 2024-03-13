@@ -259,7 +259,7 @@ body {
   top: 0;
   left: -100%;
   padding: 50px;
-  overflow: scroll;
+  overflow-y: scroll;
   /* .login end */
 }
 .header .nav__mobile .menu__close-btn {
@@ -1092,6 +1092,9 @@ section {
   .cont04 .category__list-smallBox .item {
     width: 49%;
     height: 39.53vw;
+  }
+  .cont04 .category__list-smallBox .item div h3 {
+    font-size: 16px;
   }
   .cont03 .banner {
     margin: 35px 0;

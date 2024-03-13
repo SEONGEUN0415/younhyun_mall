@@ -70,12 +70,10 @@ $(function () {
     //show depth02 when depth01 is clicked
     let depth01Mobile = $(".header .nav__mobile .depth01 >a");
     depth01Mobile.click(function () {
-        if ($(depth01Mobile).next().find(".depth02").css("display") === "none") {
+        if ($(this).next().find(".depth02").css("display") === "none") {
             $(depth01Mobile).next().find(".depth02").slideUp();
             $(this).next().find(".depth02").slideDown()
         }else{
-            $(depth01Mobile).next().find(".depth02").slideUp();
-            //$(this).find(".depth02").slideUp().animate(500, "swing");
             $(this).next().find(".depth02").slideUp();
         }
     });

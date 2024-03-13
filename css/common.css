@@ -208,6 +208,11 @@
     width: 100%;
   }
 } /* 868 */
+@media screen and (max-width: 636px) {
+  .footer {
+    margin-top: 0;
+  }
+}
 @media screen and (max-width: 550px) {
   .footer__sns {
     position: absolute;
