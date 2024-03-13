@@ -9,7 +9,7 @@ $(function () {
     //header
     //show depth02 menu when menu is mouseentered
 
-    let menu01 = $(".header .gnb .depth01");
+    let menu01 = $(".header .nav__pc .gnb .depth01");
     let header = $(".header");
 
     menu01.mouseenter(function () {
@@ -42,6 +42,33 @@ $(function () {
             header.removeClass("active");
         }
     });
+
+    //nav__mobile
+    let navMobile = $('.header .nav__mobile');
+    let openMenuBtn = $('.header .menu__open-btn');
+    let closeMenuBtn = $('.header .menu__close-btn');
+    //appear the menu when menuBtn is clicked
+    openMenuBtn.click(function(){
+        navMobile.animate(
+            {
+                left: "0px",
+              }, 1000, 
+              "easeOutCubic"
+        );
+    })
+    //remove menu when the cancel icon is clicked
+    closeMenuBtn.click(function(){
+        navMobile.animate(
+        {
+        left: '-100%'
+        }, 'easeOutCubic');
+    })
+
+    //show depth02 when depth01 is clicked
+    let depth01Mobile = $('.header .nav__mobile .depth01 > a');
+    depth01Mobile.click(function(){
+        $(this).find('.depth02').slideDown();
+    })
 
     // remove event banner when scrolling
     $(window).scroll(function () {
