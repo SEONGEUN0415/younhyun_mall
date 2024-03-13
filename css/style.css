@@ -880,15 +880,9 @@ section {
   overflow: hidden;
   /* 숨김처리하기 */
 }
-.cont06 .swiper-button-next,
-.cont06 .swiper-button-prev {
-  color: var(--color-grey);
-}
-.cont06 .swiper-button-next {
-  right: -35px;
-}
-.cont06 .swiper-button-prev {
-  left: -35px;
+.cont06 .swiper-button-next::after,
+.cont06 .swiper-button-prev::after {
+  display: none;
 }
 .cont06 .youtube {
   width: 100%;
@@ -1195,13 +1189,15 @@ section {
   .cont04 .category__list-smallBox {
     width: 100%;
   }
+  .cont05 {
+    /*  .swiper-button-next,
+    .swiper-button-prev {
+        width: 8px;
+        height: 15px;
+    } */
+  }
   .cont05 .swiper-slide figure {
     height: 120vw;
-  }
-  .cont05 .swiper-button-next,
-  .cont05 .swiper-button-prev {
-    width: 8px;
-    height: 15px;
   }
   .cont06 .swiper-slide figure {
     /* height: 240px; */

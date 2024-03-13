@@ -334,7 +334,9 @@ body {
                 padding: 10px 0;
                 margin-bottom: 10px;
                 font-size: 20px;
-                &:nth-child(1), &:nth-child(2), &:nth-child(3) {
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3) {
                     > a {
                         &::after {
                             display: block;
@@ -910,13 +912,9 @@ section {
     }
     .swiper-button-next,
     .swiper-button-prev {
-        color: var(--color-grey);
-    }
-    .swiper-button-next {
-        right: -35px;
-    }
-    .swiper-button-prev {
-        left: -35px;
+        &::after{
+            display: none;
+        }
     }
 
     .youtube {
@@ -1154,8 +1152,8 @@ section {
             .item {
                 width: 49%;
                 height: 39.53vw;
-                div{
-                    h3{
+                div {
+                    h3 {
                         font-size: 16px;
                     }
                 }
@@ -1287,11 +1285,11 @@ section {
                 height: 120vw;
             }
         }
-        .swiper-button-next,
+        /*  .swiper-button-next,
         .swiper-button-prev {
             width: 8px;
             height: 15px;
-        }
+        } */
     }
     .cont06 {
         .swiper-slide {
