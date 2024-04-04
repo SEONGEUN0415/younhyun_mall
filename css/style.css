@@ -142,10 +142,10 @@ body {
   position: absolute;
   top: 100px;
   left: 0;
-  opacity: 1;
+  display: block;
 }
 .header::after {
-  opacity: 0;
+  display: none;
   transition: all 0.2s;
 }
 .header .inner {
@@ -167,18 +167,22 @@ body {
   display: flex;
   justify-content: center;
   position: relative;
+  height: 100%;
 }
 .header .nav__pc .gnb .depth01 {
   text-align: center;
 }
 .header .nav__pc .gnb .depth01::after {
   content: "";
-  width: 0;
-  height: 2px;
+  width: 0%;
+  height: 3px;
   background-color: var(--color-red);
-  display: inline-block;
-  transform: translateY(-4500%);
+  position: relative;
+  bottom: 30%;
+  left: 50%;
+  transform: translate(-50%, 0);
   transition: all 0.5s;
+  display: block;
 }
 .header .nav__pc .gnb .depth01.active::after {
   width: 50%;
